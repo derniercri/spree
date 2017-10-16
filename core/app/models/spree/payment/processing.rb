@@ -162,8 +162,8 @@ module Spree
         else
           text = error.to_s
         end
-        logger.error(Spree.t(:gateway_error))
-        logger.error("  #{error.to_yaml}")
+        Rails.logger.error(Spree.t(:gateway_error))
+        Rails.logger.error("  #{error.to_yaml}")
         raise Core::GatewayError.new(text)
       end
 
